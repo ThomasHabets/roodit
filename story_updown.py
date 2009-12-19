@@ -36,8 +36,14 @@ def dump(sub, count, after):
             (data['subreddit'],
              100 * (data['ups'] / (float(data['ups']) +data['downs']))))
     return a['data']['after'], ra
+
+def usage():
+    print "%s <subreddit, such as programming>" % (sys.argv[0])
+    sys.exit(0)
     
 def main():
+    if len(sys.argv) != 2:
+        usage()
     sub = sys.argv[1]
     after = None
     arr = []

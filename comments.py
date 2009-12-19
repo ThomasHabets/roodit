@@ -58,7 +58,13 @@ def getData(user):
                 e[k] = e[k].encode('utf-8')
     return arr
 
+def usage():
+    print "%s <reddit username>" % (sys.argv[0])
+    sys.exit(0)
+
 def main():
+    if len(sys.argv) != 2:
+        usage()
     try:
         data = json.read(open("comments-%s.json" % (sys.argv[1])).read())
     except:
