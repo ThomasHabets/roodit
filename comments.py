@@ -2,7 +2,6 @@
 
 import json
 import httplib
-import numpy
 import sys
 import re
 
